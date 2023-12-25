@@ -9,7 +9,7 @@ import { IDataTip } from "../models/data-tip";
 })
 export class HttpService {
 
-  private url = 'http://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
+  private url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
   private apiKey = 'd227b5e89df91dc2ad3c508f9279d698739b6abb'
 
   constructor(private http: HttpClient) {}

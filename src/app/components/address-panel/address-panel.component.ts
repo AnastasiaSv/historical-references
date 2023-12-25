@@ -42,7 +42,6 @@ export class AddressPanelComponent implements OnInit, OnDestroy {
       debounceTime(300),
       distinctUntilChanged(),
       switchMap(address => this.httpService.getTips$(address)),
-      tap(data => console.log('d = ', data)),
       takeUntil(this.destroySubject)
     ).subscribe(tips => {
       this.tipsSubject.next(tips || []);
@@ -67,6 +66,9 @@ export class AddressPanelComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Не совсем поняла задание про подгрузку подсказок при скролле:
+  // в API не нашла возможности получить подсказки, пропустив первые n штук
+  // поэтому сделала, чтобы при скролле до низа блока добавлялись первые 3 подсказки
   onScroll(event: Event): void {
     const target = event.target as HTMLElement;
   

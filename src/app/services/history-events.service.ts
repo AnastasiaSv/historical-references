@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { delay, from, map, Observable, of, startWith, switchMap, toArray } from "rxjs";
-import { IHistoryEvent } from "../models/history-event";
 import { IHistoryEventsState } from "../models/history-events-state";
+import { IHistoryEvent } from "../models/history-event";
 
 @Injectable({
   providedIn: 'root'
@@ -90,7 +90,7 @@ export class HistoryEventsService {
 
   private getHistoryEventById$(id: number): Observable<IHistoryEvent | undefined> {
     return this.getHistoryEvents$().pipe(
-      map(items => items.find(item => item.id === id))
+      map(events => events.find(event => event.id === id))
     );
   }
 }

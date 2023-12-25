@@ -7,5 +7,5 @@ import { IHistoryEvent } from 'src/app/models/history-event';
 })
 export class HistoryEventsComponent {
 
-  @Input() historyEvents?: IHistoryEvent[];
+  @Input() historyEvents!: IHistoryEvent[];
 }

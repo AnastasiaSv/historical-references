@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, delay, map, Observable, of, take } from "rxjs";
-import { IHistoryEventsIds } from "../models/history-events-ids";
 import { IHistoryEventsIdsState } from "../models/history-events-ids-state";
+import { IHistoryEventsIds } from "../models/history-events-ids";
 
 @Injectable({
   providedIn: 'root'

@@ -12,11 +12,11 @@ export class HistoryEventComponent implements OnInit {
 
   safeURL?: SafeResourceUrl;
 
-  constructor(private _sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.historyEvent?.video) {
-      this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.historyEvent?.video);
+      this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.historyEvent?.video);
     }
   }
 }

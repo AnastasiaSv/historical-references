@@ -17,15 +17,19 @@ export class HistoryEventsIdsService {
   getHistoryEventsIds$(): Observable<IHistoryEventsIds[]> {
     const historyEventsIds: IHistoryEventsIds[] = [
       {
-        fiasId: '84b63f7c-f528-43ac-9120-cc3d37014c13',
+        fiasId: '715b2539-cae2-4e4a-a96e-66e2ef06997e',
         historyEventsIds: [ 1, 2, 3 ]
       },
       {
-        fiasId: '29251dcf-00a1-4e34-98d4-5c47484a36d4',
-        historyEventsIds: [ 4 ]
+        fiasId: '245074e7-402a-424e-95b2-5dacd0e7dcb3',
+        historyEventsIds: [ 2, 3 ]
       },
       {
-        fiasId: '962d32bd-ee76-41e6-9710-920e5957d26a',
+        fiasId: '84b63f7c-f528-43ac-9120-cc3d37014c13',
+        historyEventsIds: [ 1 ]
+      },
+      {
+        fiasId: '5481086a-8da5-4c66-8db0-4eb1e6872794',
         historyEventsIds: [ 68, 70 ]
       }
     ];

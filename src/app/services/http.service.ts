@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { IDataResponse } from "../models/data-response";
 import { map, Observable } from "rxjs";
+import { IDataResponse } from "../models/data-response";
 import { IDataTip } from "../models/data-tip";
 
 @Injectable({

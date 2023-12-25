@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { BehaviorSubject, debounceTime, distinctUntilChanged, Subject, switchMap, takeUntil } from 'rxjs';
+import { BehaviorSubject, debounceTime, distinctUntilChanged, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { HistoryEventsIdsService } from 'src/app/services/history-events-ids.service';
 import { HttpService } from 'src/app/services/http.service';
 import { IDataTip } from 'src/app/models/data-tip';
@@ -13,7 +13,7 @@ export class AddressPanelComponent implements OnInit, OnDestroy {
 
   addressControl = new FormControl();
   openDropdown: boolean = false;
-  initialAddress: string = 'г Москва, Лаврушинский пер, д 10';
+  initialAddress: string = 'г Москва, Лаврушинский пер, д 6';
 
   tipsSubject: BehaviorSubject<IDataTip[]> = new BehaviorSubject<IDataTip[]>([]);
   destroySubject: Subject<void> = new Subject();
@@ -42,6 +42,7 @@ export class AddressPanelComponent implements OnInit, OnDestroy {
       debounceTime(300),
       distinctUntilChanged(),
       switchMap(address => this.httpService.getTips$(address)),
+      tap(data => console.log('d = ', data)),
       takeUntil(this.destroySubject)
     ).subscribe(tips => {
       this.tipsSubject.next(tips || []);

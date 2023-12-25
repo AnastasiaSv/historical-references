@@ -1,0 +1,20 @@
+<div class="flex pb-6">
+  <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md">
+    <img src="assets/images/{{ historyEvent.image }}" [alt]="historyEvent.title" class="h-full w-full object-cover object-center">
+  </div>
+
+  <div class="ml-4 flex flex-1 flex-col">
+    <h3 class="text-base font-medium text-gray-900">{{ historyEvent.title }}</h3>
+    <div class="text-sm text-gray-500">
+      <p class="mt-1">{{ historyEvent.date }}</p>
+      <p class="mt-1 font-medium">{{ historyEvent.address }}</p>
+      <p class="mt-1">{{ historyEvent.description }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="relative pt-[56.25%]">
+  <iframe [src]="safeURL" class="absolute inset-0 w-full h-full rounded-md" frameborder="0"></iframe>
+</div>
+
+<hr class="my-12 h-px border-t-0 bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25">
